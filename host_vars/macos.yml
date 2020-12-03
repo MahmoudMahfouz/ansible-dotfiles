@@ -1,0 +1,3 @@
+---
+dotfiles_path: $HOME/.dotfiles
+vim_path: $HOME/.dotfiles/.vim
