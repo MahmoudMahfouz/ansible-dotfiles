@@ -1,0 +1,10 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include linux base stuff"
+      include_role:
+        name: "os-base"
+    - name: "Include fish_shell"
+      include_role:
+        name: "shells-fish"

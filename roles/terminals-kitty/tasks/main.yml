@@ -1,0 +1,7 @@
+---
+# tasks file for terminals-kitty
+
+- include_tasks: install-darwin.yml
+  when: ansible_os_family == 'Darwin'
+- include_tasks: install-debian.yml
+  when: ansible_os_family == 'Debian'

@@ -1,0 +1,10 @@
+---
+# tasks file for linux_base
+- name: Update apt cache
+  apt:
+    update_cache: true
+
+- name: "{{action}} packages {{apt_packages}}"
+  apt:
+    name: "{{apt_packages}}"
+    state: "{{state}}"

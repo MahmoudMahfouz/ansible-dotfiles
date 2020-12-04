@@ -1,7 +1,0 @@
----
-- name: Converge
-  hosts: all
-  tasks:
-    - name: "Include mac_base"
-      include_role:
-        name: "mac_base"

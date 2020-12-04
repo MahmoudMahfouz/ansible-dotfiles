@@ -1,0 +1,19 @@
+---
+# tasks file for fish_shell
+- name: Include distribution specific variables
+  include_vars: "{{ lookup('first_found', params) }}"
+  vars:
+    params:
+      files:
+        - "{{ ansible_facts.os_family }}-{{ ansible_facts.distribution_major_version }}.yml"
+        - "{{ ansible_facts.distribution }}-{{ ansible_facts.distribution_version }}.yml"
+        - "{{ ansible_facts.distribution }}.yml"
+        - "{{ ansible_facts.os_family }}.yml"
+      paths:
+        - vars
+  tags:
+    - fish
+
+- include_tasks: "install-{{ ansible_facts.os_family }}.yml"
+  tags:
+    - fish

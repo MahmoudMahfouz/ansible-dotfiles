@@ -1,0 +1,25 @@
+- name: Add fish repository key
+  apt_key:
+    keyserver: "{{ _fish_apt_keyserver | default(omit) }}"
+    url: "{{ _fish_apt_key_url | default(omit) }}"
+    id: "{{ _fish_apt_key_id | default(omit) }}"
+    state: "{{state}}"
+  tags:
+    - fish
+
+- name: Add fish repository
+  apt_repository:
+    filename: shells_fish_release_{{ fish_release_version }}
+    repo: "{{ _fish_apt_repo_url }}"
+    state: "{{state}}"
+  tags:
+    - fish
+
+- name: Debian -> {{action}} Fish
+  apt:
+    name: fish
+    allow_unauthenticated: yes
+    state: "{{state}}"
+    cache_valid_time: 600
+  tags:
+    - fish

@@ -1,0 +1,8 @@
+- name: Update apt cache
+  apt:
+    update_cache: true
+
+- name: "{{action}} packages {{packages}}"
+  apt:
+    name: kitty
+    state: "{{state}}"

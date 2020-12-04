@@ -1,0 +1,139 @@
+---
+# vars file for linux_base
+
+apt_sources:
+- hi
+
+apt_packages:
+- ant
+- build-essential
+- cmake
+- coreutils
+- curl
+- exuberant-ctags
+- gcc
+- gnupg
+- grc
+- htop
+- iftop
+- imagemagick
+- iotop
+- jq
+- libbz2-dev
+- libncurses5-dev
+- libncursesw5-dev
+- libreadline-dev
+- libsqlite3-dev
+- libssl-dev
+- libxml2
+- libxml2-dev
+- libxmlsec1-dev
+- libxslt1-dev
+- llvm
+- make
+- openssl
+- silversearcher-ag
+- software-properties-common
+- tk-dev
+- wget
+- xz-utils
+- zlib1g-dev
+
+brew_packages:
+- ack
+- ant
+- cmake
+- coreutils
+- ctags-exuberant
+- fasd
+- gcc
+- gpg
+- graphviz
+- grc
+- htop
+- iftop
+- imagemagick
+- jq
+- kustomize
+- moreutils
+- openssl
+- reattach-to-user-namespace
+- scmpuff
+- skaffold
+- terraform
+- the_silver_searcher
+- tree
+- wget
+
+cask_packages:
+# - adobe-photoshop-lightroom
+- alfred
+# - android-studio
+- appcleaner
+# - Atom
+- balsamiq-mockups
+- caffeine
+# - calibre
+- cheatsheet
+# - day-o
+- disk-inventory-x
+# - franz
+- filebot
+- flux
+- gas-mask
+- # genymotion
+- google-chrome
+- google-earth-web-plugin
+# - Google-photos-backup-and-sync
+# - intellij-idea-ce
+# - istat-menus
+- java
+- karabiner
+- macdown
+- meld
+- # Megasync
+- # mongo-management-studio
+- karabiner-elements
+- mysqlworkbench
+- onyx
+- product-hunt
+- sequel-pro
+- shotcut
+- sketch
+- sketch-toolbox
+- skitch
+- skyfonts
+- skype
+- slack
+- spectacle
+- spotify
+- textual
+- torbrowser
+- Transmission
+- vagrant
+- virtualbox
+- vlc
+
+osx_defaults:
+- com.apple.appstore ShowDebugMenu -bool true
+- com.apple.appstore WebKitDeveloperExtras -bool true
+- com.apple.dashboard mcx-disabled -bool true
+- com.apple.desktopservices DSDontWriteNetworkStores -bool true
+- com.apple.dock autohide -bool true
+- com.apple.dock autohide-delay -float 0
+- com.apple.dock autohide-time-modifier -float 0
+- com.apple.dock enable-spring-load-actions-on-all-items -bool true
+- com.apple.dock minimize-to-application -bool true
+- com.apple.dock show-process-indicators -bool true
+- com.apple.dock showhidden -bool true
+- com.apple.finder FXDefaultSearchScope -string "SCcf"
+- com.apple.finder QuitMenuItem -bool true
+- com.apple.finder ShowPathbar -bool true
+- com.apple.LaunchServices LSQuarantine -bool false
+- com.apple.universalaccess closeViewScrollWheelToggle -bool true
+- com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+- NSGlobalDomain ApplePressAndHoldEnabled -bool false
+- NSGlobalDomain com.apple.springing.enabled -bool true
+- NSGlobalDomain KeyRepeat -int 0
+- NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+- NSGlobalDomain NSDisableAutomaticTermination -bool true

@@ -1,0 +1,7 @@
+---
+# defaults file for fish_shell
+fish_release_version: 3
+
+state: present
+# The action is used for titles only
+action: install
