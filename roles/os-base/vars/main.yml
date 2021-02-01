@@ -1,6 +1,11 @@
 ---
 # vars file for linux_base
 
+git_config:
+  name: M Saleh
+  email: mahmoud.mahfouz.zaza@gmail.com
+  editor: vim
+
 apt_sources:
 - hi
 
@@ -12,6 +17,7 @@ apt_packages:
 - curl
 - exuberant-ctags
 - gcc
+- git
 - gnupg
 - grc
 - htop
@@ -71,34 +77,32 @@ cask_packages:
 # - android-studio
 - appcleaner
 # - Atom
-- balsamiq-mockups
+- balsamiq-wireframes
 - caffeine
 # - calibre
 - cheatsheet
 # - day-o
 - disk-inventory-x
 # - franz
+- expressvpn
 - filebot
 - flux
 - gas-mask
-- # genymotion
+# - genymotion
 - google-chrome
-- google-earth-web-plugin
+# - google-earth-web-plugin
 # - Google-photos-backup-and-sync
 # - intellij-idea-ce
 # - istat-menus
-- java
-- karabiner
-- macdown
+# - karabiner
+# - macdown
 - meld
-- # Megasync
-- # mongo-management-studio
+- Megasync
+# - mongo-management-studio
 - karabiner-elements
-- mysqlworkbench
 - onyx
 - product-hunt
 - sequel-pro
-- shotcut
 - sketch
 - sketch-toolbox
 - skitch
@@ -107,8 +111,7 @@ cask_packages:
 - slack
 - spectacle
 - spotify
-- textual
-- torbrowser
+- tor-browser
 - Transmission
 - vagrant
 - virtualbox
@@ -137,3 +140,7 @@ osx_defaults:
 - NSGlobalDomain KeyRepeat -int 0
 - NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 - NSGlobalDomain NSDisableAutomaticTermination -bool true
+- NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -int 1
+- com.apple.AppleMultitouchTrackpad Clicking -bool true
+- com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+

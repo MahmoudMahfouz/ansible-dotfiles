@@ -3,3 +3,13 @@
 
 - include_tasks: install-debian.yml
   when: ansible_os_family == 'Debian'
+
+- name: Setup Global gitignore
+  copy:
+    src: gitignore
+    dest: ansible_env.HOME/.gitignore
+
+- name: Setup Global gitconfig
+  template:
+    src: gitconfig.j2
+    dest: ansible_env.HOME/.gitconfig

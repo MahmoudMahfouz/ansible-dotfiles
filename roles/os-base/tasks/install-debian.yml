@@ -1,5 +1,10 @@
 ---
 # tasks file for linux_base
+- name: Determine Homebrew ownership variables
+  set_fact:
+    homebrew_user: '{{ homebrew_user | default(ansible_user_id) }}'
+    homebrew_group: '{{ homebrew_group | default(ansible_user_gid) }}'
+
 - name: Update apt cache
   apt:
     update_cache: true
@@ -7,4 +12,26 @@
 - name: "{{action}} packages {{apt_packages}}"
   apt:
     name: "{{apt_packages}}"
+    state: "{{state}}"
+
+- name: Add the user
+  user:
+    name: mm
+    uid: 1040
+
+- name: Download Linux Brew installation script
+  get_url:
+    url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+    dest: /tmp/brew.sh
+    mode: 755
+
+- name: Install Linux Brew
+  shell: . /tmp/brew.sh
+  become_user: mm
+  args:
+    executable: /bin/bash
+
+- name: "{{action}} brew packages: {{brew_packages}}"
+  homebrew:
+    name: "{{brew_packages}}"
     state: "{{state}}"

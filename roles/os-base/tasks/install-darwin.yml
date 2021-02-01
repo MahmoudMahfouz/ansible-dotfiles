@@ -1,12 +1,17 @@
-- homebrew:
+- name: "{{action}} brew packages: {{brew_packages}}"
+  homebrew:
     name: "{{brew_packages}}"
     state: "{{state}}"
 
-- homebrew_cask:
+- name: "{{action}} casks: {{cask_packages}}"
+  community.general.homebrew_cask:
     name: "{{cask_packages}}"
     state: "{{state}}"
+    install_options: force
 
-- community.general.osx_defaults:
+
+- name: "{{action}} some OSX defaults"
+  community.general.osx_defaults:
     domain: "{{ item.split(' ')[0] }}"
     key: "{{ item.split(' ')[1] }}"
     type: "{{ item.split(' ')[2] | regex_replace('-') }}"
