@@ -1,9 +1,0 @@
-- community.general.homebrew:
-    update_homebrew: yes
-
-- name: "Mac OS {{action}} Fish"
-  homebrew:
-    name: fish
-    state: "{{state}}"
-  tags:
-    - fish

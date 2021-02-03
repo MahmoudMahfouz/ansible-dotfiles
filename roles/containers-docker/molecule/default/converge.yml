@@ -1,7 +1,0 @@
----
-- name: Converge
-  hosts: all
-  tasks:
-    - name: "Include containers-docker"
-      include_role:
-        name: "containers-docker"

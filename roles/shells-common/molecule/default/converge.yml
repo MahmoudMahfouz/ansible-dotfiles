@@ -1,7 +1,0 @@
----
-- name: Converge
-  hosts: all
-  tasks:
-    - name: "Include terminals-common"
-      include_role:
-        name: "terminals-common"

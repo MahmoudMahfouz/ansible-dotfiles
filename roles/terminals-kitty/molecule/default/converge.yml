@@ -1,7 +1,0 @@
----
-- name: Converge
-  hosts: all
-  tasks:
-    - name: "Include terminals-kitty"
-      include_role:
-        name: "terminals-kitty"

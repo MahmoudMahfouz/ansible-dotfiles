@@ -1,0 +1,31 @@
+---
+# - name: Include os-base vars
+#   include_vars: "{{role_path}}/vars/10-os-base.yml"
+
+- name: Give self passwordless sudo
+  become: true
+  template:
+      src: sudoers.j2
+      dest: /etc/sudoers.d/{{ ansible_user_id }}
+      mode: 0440
+
+# - include_tasks: "{{role_path}}/tasks/10-os-base/install-darwin.yml"
+#   when: ansible_os_family == 'Darwin'
+
+# - include_tasks: "{{role_path}}/tasks/10-os-base/install-debian.yml"
+#   when: ansible_os_family == 'Debian'
+
+- name: Copy EditorConfig
+  copy:
+    src: editorconfig
+    dest: "{{ ansible_env.HOME }}/.editorconfig"
+
+- name: Setup Global gitignore
+  copy:
+    src: gitignore
+    dest: "{{ ansible_env.HOME }}/.gitignore"
+
+- name: Setup Global gitconfig
+  ansible.builtin.template:
+    src: gitconfig.j2
+    dest: "{{ ansible_env.HOME }}/.gitconfig"

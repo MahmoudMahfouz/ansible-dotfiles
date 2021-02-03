@@ -1,0 +1,13 @@
+---
+- name: Converge
+  hosts: all # vagrant-*,docker-*
+  gather_facts: true
+  roles:
+  - ../../../../mac
+  # tasks:
+  # - name: Run Mac role
+  #   include_role:
+  #     name: ../../../../mac
+  #     tasks_from: vim
+
+

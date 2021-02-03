@@ -1,0 +1,20 @@
+- name: "{{action}} brew packages: {{brew_packages}}"
+  homebrew:
+    name: "{{brew_packages}}"
+    state: "{{state}}"
+
+- name: "{{action}} casks: {{cask_packages}}"
+  community.general.homebrew_cask:
+    name: "{{cask_packages}}"
+    state: "{{state}}"
+    install_options: force
+
+- name: "{{action}} some OSX defaults"
+  community.general.osx_defaults:
+    domain: "{{ item.split(' ')[0] }}"
+    key: "{{ item.split(' ')[1] }}"
+    type: "{{ item.split(' ')[2] | regex_replace('-') }}"
+    value: "{{ item.split(' ')[3] }}"
+    state: "{{state}}"
+  loop: "{{osx_defaults}}"
+

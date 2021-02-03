@@ -1,7 +1,0 @@
----
-- name: Converge
-  hosts: all
-  tasks:
-    - name: "Include os-base"
-      include_role:
-        name: "os-base"

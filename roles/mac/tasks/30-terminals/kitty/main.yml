@@ -1,0 +1,13 @@
+---
+- name: Brew install Kitty
+  community.general.homebrew_cask:
+    name: kitty
+    state: "{{state}}"
+    install_options: force
+
+- name: Insert Fish completion
+  blockinfile:
+    path: "{{ fish_rc }}"
+    block: |
+      Match User ansible-agent
+      PasswordAuthentication no

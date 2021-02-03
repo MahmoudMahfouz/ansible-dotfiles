@@ -1,0 +1,38 @@
+---
+# - name: Install base OS
+#   tags:
+#       - git
+#       - gitignore
+#       - global
+#       - packages
+#   import_tasks: roles/{{role_name}}/tasks/10-os-base/main.yml
+
+# - name: Install Shells
+#   tags:
+#       - Zsh
+#       - fish
+#       - extras
+#   import_tasks: roles/{{role_name}}/tasks/20-shells/main.yml
+
+- name: Install Terminals
+  tags:
+      - alacritty
+      - kitty
+      - iterm
+  import_tasks: roles/{{role_name}}/tasks/30-terminals/main.yml
+
+# - name: Install alacritty (github.com/jwilm/alacritty)
+#   when: install_alacritty|bool
+#   tags:
+#       - packages
+#       - gui
+#       - alacritty
+#   import_tasks: roles/{{role_name}}/tasks/terminals/alacritty/alacritty.yml
+
+# - name: Install packages & other software
+#   tags:
+#       - packages
+#       - brew
+#       - homebrew
+#       - linuxbrew
+#   import_tasks: managers.yml

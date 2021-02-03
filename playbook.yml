@@ -5,10 +5,4 @@
   vars:
     brew_packages: [ack, ant]
   roles:
-  - os-base
-
-- name: Setup shells
-  gather_facts: true
-  hosts: localhost
-  roles:
-  - shells-zsh
+  - mac

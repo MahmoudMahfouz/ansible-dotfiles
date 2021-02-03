@@ -1,7 +1,0 @@
----
-- name: Converge
-  hosts: all
-  tasks:
-    - name: "Include text-editor-vscode"
-      include_role:
-        name: "text-editor-vscode"

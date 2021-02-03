@@ -1,0 +1,36 @@
+---
+# - name: Include shell vars
+#   include_vars: "{{role_path}}/vars/20-shells.yml"
+
+# - include_tasks: "{{role_path}}/tasks/20-shells/base/main.yml"
+
+
+- name: Create aliases, functions, exports, ... dotfiles
+  block:
+    - name: create directory for dotfiles
+      ansible.builtin.file:
+        state: directory
+        mode: '0755'
+        path: "{{ dotfiles_dir }}"
+
+    - name: Copy dotfiles
+      with_items:
+      - aliases
+      - profile
+      - exports
+      - functions
+      ansible.builtin.template:
+        dest: "{{ dotfiles_dir }}/.{{ item }}.sh"
+        src: "shells_{{ item }}.sh"
+
+- include_tasks: "{{role_path}}/tasks/20-shells/fish/main.yml"
+  when: install_fish
+
+- include_tasks: "{{role_path}}/tasks/20-shells/zsh/main.yml"
+  when: install_zsh
+
+- name: Set default shell
+  become: true
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: "{{ default_shell }}"
