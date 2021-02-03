@@ -1,11 +1,3 @@
-fish_plugins:
-- IlanCosman/tide
-- pure-fish/pure
-- jethrokuan/fzf
-
-shell_editor: vim
-shell_term: xterm-256color
-
 zsh_user_group: "{% if ansible_os_family == 'Darwin' %}staff{% else %}{{ zsh_user }}{% endif %}"
 zsh_antigen_path: "{% if zsh_shared %}/usr/share/zsh-config{% else %}~{{ zsh_user }}/.antigen{% endif %}"
 zsh_config: "{% if zsh_shared %}/usr/share/zsh-config/.zshrc{% else %}~{{ zsh_user }}/.zshrc{% endif %}"

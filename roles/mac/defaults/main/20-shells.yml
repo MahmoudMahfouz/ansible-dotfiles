@@ -1,7 +1,30 @@
 ---
 
+#############
+# SHELLS
+#############
+dotfiles_dir: '{{ ansible_user_dir }}/.dotfiles'
+dotfiles_path: '{{ ansible_user_dir }}/.dotfiles'
+install_fish: true
+install_zsh: true
+nix_bins: /usr/local/bin
+fish_bin: '{{ nix_bins}}/fish'
+fish_version: 3.0.2
+fish_rc: "{{ ansible_user_dir }}/"
+fisher_url: https://git.io/fisher
+fisher_dir: '{{ ansible_user_dir }}/.config/fish/functions'
+fisher: '{{ fisher_dir }}/fisher.fish'
+
+default_shell: "{{fish_bin}}"
+
+fish_plugins:
+- IlanCosman/tide
+- pure-fish/pure
+- jethrokuan/fzf
+
 zsh_user: "{{ ansible_user_id }}"
 
+zsh_rc: "{{ ansible_user_dir }}/.zshrc"
 # .zshrc config
 zsh_hist_stamps: yyyy-mm-dd
 zsh_share_history: no

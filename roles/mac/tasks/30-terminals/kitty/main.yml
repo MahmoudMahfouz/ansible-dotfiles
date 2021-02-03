@@ -5,9 +5,11 @@
     state: "{{state}}"
     install_options: force
 
-- name: Insert Fish completion
+- name: Insert ZSH Fish completion
   blockinfile:
-    path: "{{ fish_rc }}"
+    path: "{{ zsh_rc }}"
     block: |
-      Match User ansible-agent
-      PasswordAuthentication no
+      autoload -Uz compinit
+      compinit
+      # Completion for kitty
+      kitty + complete setup zsh | source /dev/stdin

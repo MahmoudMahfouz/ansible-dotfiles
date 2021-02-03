@@ -1,4 +1,2 @@
 ---
 # vars file for mac
-
-dotfiles_path: "{{ ansible_user_id }}/.dotfiles"

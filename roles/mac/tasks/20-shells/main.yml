@@ -1,10 +1,4 @@
 ---
-# - name: Include shell vars
-#   include_vars: "{{role_path}}/vars/20-shells.yml"
-
-# - include_tasks: "{{role_path}}/tasks/20-shells/base/main.yml"
-
-
 - name: Create aliases, functions, exports, ... dotfiles
   block:
     - name: create directory for dotfiles

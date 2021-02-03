@@ -4,3 +4,6 @@
 state: present
 # The action is used for titles only
 action: install
+
+shell_editor: vim
+shell_term: xterm-256color

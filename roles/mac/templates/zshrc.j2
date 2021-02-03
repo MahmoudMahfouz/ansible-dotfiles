@@ -130,7 +130,7 @@ declare -p FZF_WIDGET_OPTS > /dev/null 2>&1 && FZF_WIDGET_OPTS[insert-history]="
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE={{ zsh_autosuggestions_max_length }}
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240" # gray highlight
 
-for file in "{{ dotfiles_path }}/.*"; do
+for file in "{{ dotfiles_dir }}/.*"; do
     source "$file"
 done
 {% if zsh_load_etc_profile %}source /etc/profile{% endif %}
