@@ -13,3 +13,5 @@
       compinit
       # Completion for kitty
       kitty + complete setup zsh | source /dev/stdin
+
+# TODO: configure kitty using templates

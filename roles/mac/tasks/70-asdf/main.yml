@@ -1,1 +1,19 @@
-# go, python, node.js, ruby, c++, java, haskell, erlang, rust, helm, istioctl, jq, jsonnet, kubectl, kubectx, kubefed, elasticsearch, lua, perl, R, skaffold, terraform, terragrunt, vagrant, vault, yq, consul
+---
+- name: Install ASDF
+  homebrew:
+    name: asdf
+    state: "{{state}}"
+
+- name: "source asdf script"
+  template:
+    src: "asdf.sh.j2"
+    dest: "/etc/profile.d/asdf.sh"
+    owner: "root"
+    # group: "root"
+    mode: 0755
+  become: True
+
+- include: "{{role_path}}/tasks/70-asdf/plugin.yml"
+  with_items: "{{ asdf_plugins }}"
+  loop_control:
+    loop_var: asdf_plugin

@@ -1,0 +1,8 @@
+---
+- include_tasks: "install_Darwin.yml"
+  when: ansible_os_family == 'Debian'
+
+- include_tasks: "config.yml"
+
+- include_tasks: "config_Darwin.yml"
+  when: ansible_os_family == 'Debian'

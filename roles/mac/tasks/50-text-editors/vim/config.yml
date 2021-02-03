@@ -1,0 +1,24 @@
+---
+- name: Create configuration directory for vim
+  file:
+    state: 'directory'
+    dest: '{{dotfiles_dir }}/vim'
+    mode: '0755'
+
+- name: Configure vim global options
+  template:
+    src: 'vimrc.j2'
+    dest: '{{ dotfiles_dir }}/vim/vimrc'
+    mode: '0744'
+
+- name: Configure vim plugins
+  template:
+    src: 'vimrc-plugins.j2'
+    dest: '{{ dotfiles_dir }}/vim/vimrc-plugins'
+    mode: '0744'
+
+- name: install vundle plugin
+  shell: nvim +PluginInstall +qall --headless
+
+# TODO:
+# some how add those :CocInstall coc-tsserver coc-json coc-html coc-css

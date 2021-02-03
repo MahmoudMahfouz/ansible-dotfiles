@@ -55,6 +55,7 @@ brew_packages:
 - fzf
 - gcc
 - gpg
+- gping
 - graphviz
 - grc
 - htop
@@ -63,14 +64,18 @@ brew_packages:
 - jq
 - kustomize
 - moreutils
+- navi
 - openssl
 - reattach-to-user-namespace
+- sampler
 - scmpuff
 - skaffold
+- tealdeer
 - terraform
 - the_silver_searcher
 - tree
 - wget
+- wtfutil
 
 cask_packages:
 # - adobe-photoshop-lightroom
@@ -103,6 +108,7 @@ cask_packages:
 # - mongo-management-studio
 - karabiner-elements
 - onyx
+- phoenix
 - product-hunt
 - sequel-pro
 - sketch

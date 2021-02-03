@@ -66,3 +66,5 @@
     dest: /etc/zsh/zshenv
     state: present
   when: ansible_distribution == 'Ubuntu'
+
+# TODO: configure zsh to use powerline10k

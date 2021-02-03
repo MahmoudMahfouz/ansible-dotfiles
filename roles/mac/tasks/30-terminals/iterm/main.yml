@@ -23,3 +23,5 @@
     - item.value is defined
     - iterm2_defaults|length > 0
     - iterm2_domain is defined
+
+# TODO: Configure iterm2 (adding key bindings for ctrl+tab)

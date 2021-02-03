@@ -26,6 +26,8 @@ platforms:
 provisioner:
   name: ansible
   log: True
+  # playbooks:
+  #   converge: ../../../../playbook.yml
   options:
     vvv: True
   inventory:

@@ -1,0 +1,7 @@
+---
+- include_tasks: "{{role_path}}/tasks/50-text-editors/vim/main.yml"
+  when: install_vim
+
+# No need to configure, since the settings-sync feature is now built in VSCode
+- include_tasks: "{{role_path}}/tasks/50-text-editors/vscode/main.yml"
+  when: install_vscode

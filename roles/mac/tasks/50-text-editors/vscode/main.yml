@@ -1,6 +1,5 @@
----
-- name: Install Docker
+- name: Install VSCode
   community.general.homebrew_cask:
-    name: docker
+    name: visual-studio-code
     state: "{{state}}"
     install_options: force

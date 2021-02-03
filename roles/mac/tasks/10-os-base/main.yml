@@ -29,3 +29,6 @@
   ansible.builtin.template:
     src: gitconfig.j2
     dest: "{{ ansible_env.HOME }}/.gitconfig"
+
+# TODO: Configure phoenix
+# TODO: Configure sampler

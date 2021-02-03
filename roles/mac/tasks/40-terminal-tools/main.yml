@@ -1,0 +1,6 @@
+---
+- include_tasks: "{{role_path}}/tasks/40-terminal-tools/tmux.yml"
+  when: install_tmux
+
+- include_tasks: "{{role_path}}/tasks/40-terminal-tools/wtfutil.yml"
+  when: install_wtfutils
