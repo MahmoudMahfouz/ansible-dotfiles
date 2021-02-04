@@ -1,6 +1,6 @@
 
 - name: Setup os
   gather_facts: true
-  hosts: all
+  hosts: localhost
   roles:
   - mac

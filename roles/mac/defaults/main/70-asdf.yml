@@ -5,8 +5,9 @@ asdf_user: "deploy"
 asdf_legacy_version_file: "yes"
 
 asdf_git_repo: "https://github.com/asdf-vm/asdf.git"
-asdf_home: "{{ ansible_env.HOME }}"
-asdf_dir: "{{ asdf_home }}/.asdf"
+# asdf_home: "{{ ansible_env.HOME }}"
+asdf_dir: "{{ ansible_user_dir }}/.asdf"
+asdf_bin: "{{ asdf_dir}}/bin/asdf"
 
 asdf_plugins:
   - name: golang
@@ -31,19 +32,19 @@ asdf_plugins:
     delete_versions: []
     global: 14.15.4
   - name: ruby
-    brew_deps: []
+    brew_deps: ["ruby-build"]
     repository: "https://github.com/asdf-vm/asdf-ruby.git"
     versions:
-      - 2.7.2
+      - 2.6.1
     delete_versions: []
-    global: 2.7.2
+    global: 2.6.1
   - name: java
     brew_deps: []
     repository: "https://github.com/halcyon/asdf-java.git"
     versions:
-      - adopt-openjdk-12.0.2+10.2
+      - openjdk-15.0.2
     delete_versions: []
-    global: adopt-openjdk-12.0.2+10.2
+    global: openjdk-15.0.2
   - name: haskell
     brew_deps: []
     repository: "https://github.com/vic/asdf-haskell.git"

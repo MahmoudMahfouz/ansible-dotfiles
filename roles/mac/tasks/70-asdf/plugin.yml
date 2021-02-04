@@ -1,10 +1,9 @@
 ---
-- name: Install plugin
+- name: "Install plugin {{asdf_plugin.name}}"
   command: "bash -lc 'asdf plugin-add {{ asdf_plugin.name }} {{ asdf_plugin.repository | default() }}'"
-  args:
-    creates: "{{ asdf_dir }}/plugins/{{ asdf_plugin.name }}"
-    # chdir: "{{ asdf_base_path }}"
-  become: True
+  # args:
+  #   creates: "{{ asdf_dir }}/plugins/{{ asdf_plugin.name }}"
+  #   # chdir: "{{ asdf_base_path }}"
   ignore_errors: true
 
 - name: Nodejs only
@@ -18,15 +17,13 @@
         path: "{{ asdf_nodejs_keyring }}"
         state: directory
         mode: 0700
-      become: True
 
     - name: "import Node.js keys to keyring"
       command: "bash -lc '{{ asdf_dir }}/plugins/nodejs/bin/import-release-team-keyring'"
-      args:
-        creates: "{{ asdf_nodejs_keyring }}/pubring.gpg"
+      # args:
+      #   creates: "{{ asdf_nodejs_keyring }}/pubring.gpg"
       environment:
         GNUPGHOME: "{{ asdf_nodejs_keyring }}"
-      become: True
 
   when: asdf_plugin.name == "nodejs"
 
@@ -36,15 +33,12 @@
     state: "{{state}}"
 
 - name: "Install ASDF versions for {{asdf_plugin.name}}"
-  command: "bash -lc 'asdf install {{ asdf_plugin.name }} {{ item }}'"
+  command: "bash -lc '{{asdf_bin}} install {{ asdf_plugin.name }} {{ item }}'"
   with_items: "{{ asdf_plugin.versions }}"
-  become: True
 
 - name: "Remove ASDF versions for {{asdf_plugin.name}}"
   command: "bash -lc 'asdf uninstall {{ asdf_plugin.name }} {{ item }}'"
   with_items: "{{ asdf_plugin.delete_versions }}"
-  become: True
 
 - name: "Set global ASDF version for {{asdf_plugin.name}}"
-  command: "bash -lc 'asdf global {{ asdf_plugin.name }} {{ asdf_plugin.global | default(asdf_plugin.versions | difference(asdf_plugin.delete_versions|default([])) | sort | first) }}'"
-  become: True
+  command: "bash -lc 'asdf global {{ asdf_plugin.name }} {{ asdf_plugin.versions | last }}'"

@@ -6,6 +6,10 @@ git_config:
   email: mahmoud.mahfouz.zaza@gmail.com
   editor: vim
 
+custom_brews:
+- tap: caskroom/fonts
+  packages:
+  - font-firacode-nerd-font
 apt_sources:
 - hi
 
@@ -119,6 +123,7 @@ cask_packages:
 - slack
 - spectacle
 - spotify
+- ticktick
 - tor-browser
 - Transmission
 - vagrant

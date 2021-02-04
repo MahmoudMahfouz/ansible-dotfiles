@@ -1,17 +1,36 @@
 ---
-- name: Install ASDF
-  homebrew:
-    name: asdf
-    state: "{{state}}"
+# - name: Install ASDF
+#   homebrew:
+#     name: asdf
+#     state: "{{state}}"
 
-- name: "source asdf script"
-  template:
-    src: "asdf.sh.j2"
-    dest: "/etc/profile.d/asdf.sh"
-    owner: "root"
-    # group: "root"
-    mode: 0755
-  become: True
+- name: Clone ASDF VM
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: "{{ asdf_dir }}"
+    version: v0.8.0
+    force: true
+
+- name: Add ASDF to zsh
+  blockinfile:
+    path: "{{zsh_rc}}"
+    block: |
+      . $HOME/.asdf/asdf.sh
+
+- name: Add ASDF to Fish
+  blockinfile:
+    path: "{{fish_rc}}"
+    block: |
+      source "{{asdf_dir}}/asdf.fish"
+
+# - name: "source asdf script"
+#   template:
+#     src: "asdf.sh.j2"
+#     dest: "/etc/profile.d/asdf.sh"
+#     owner: "root"
+#     # group: "root"
+#     mode: 0755
+#   become: True
 
 - include: "{{role_path}}/tasks/70-asdf/plugin.yml"
   with_items: "{{ asdf_plugins }}"

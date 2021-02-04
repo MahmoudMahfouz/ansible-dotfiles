@@ -68,3 +68,10 @@
       - yq
       - consul
   import_tasks: roles/{{role_name}}/tasks/70-asdf/main.yml
+
+- name: Install some packages
+  tags:
+      - NPM
+      - gems
+      - pips
+  import_tasks: roles/{{role_name}}/tasks/80-language-packages/main.yml

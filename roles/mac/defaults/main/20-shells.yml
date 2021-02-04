@@ -10,7 +10,8 @@ install_zsh: true
 nix_bins: /usr/local/bin
 fish_bin: '{{ nix_bins}}/fish'
 fish_version: 3.0.2
-fish_rc: "{{ ansible_user_dir }}/"
+# fish_rc: "{{ ansible_user_dir }}/.config/fish/config.fish"
+fish_rc: "/usr/local/share/fish/config.fish"
 fisher_url: https://git.io/fisher
 fisher_dir: '{{ ansible_user_dir }}/.config/fish/functions'
 fisher: '{{ fisher_dir }}/fisher.fish'
