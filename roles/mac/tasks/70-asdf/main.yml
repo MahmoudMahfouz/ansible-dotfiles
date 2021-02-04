@@ -23,6 +23,8 @@
     block: |
       source "{{asdf_dir}}/asdf.fish"
 
+# Configure asdf completions
+
 # - name: "source asdf script"
 #   template:
 #     src: "asdf.sh.j2"

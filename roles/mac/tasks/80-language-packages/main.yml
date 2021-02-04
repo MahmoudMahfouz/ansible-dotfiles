@@ -2,14 +2,15 @@
 - name: Install pips
   ansible.builtin.pip:
     name: "{{ item }}"
-  with_items: pips
+  with_items: "{{ pips }}"
 
 - name: Install NPMs
   community.general.npm:
     name: "{{ item }}"
-  with_items: npms
+    global: yes
+  with_items: "{{ npms }}"
 
 - name: Install Gems
   community.general.gem:
     name: "{{ item }}"
-  with_items: gems
+  with_items: "{{ gems }}"

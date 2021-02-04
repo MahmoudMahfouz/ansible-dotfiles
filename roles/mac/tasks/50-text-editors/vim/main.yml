@@ -1,6 +1,8 @@
 ---
-- include_tasks: "install_Darwin.yml"
-  when: ansible_os_family == 'Debian'
+- name: Install NeoVim
+  homebrew:
+    name: neovim
+    state: "{{state}}"
 
 - include_tasks: "config.yml"
 

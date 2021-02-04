@@ -23,13 +23,13 @@
 #   loop_control:
 #     loop_var: custom_brew
 
-- name: Install custom brew
-  block:
-  - name: install homebrew casks
-    homebrew_tap: "name={{item.tap}}"
+# - name: Install custom brew
+#   block:
+#   - name: install homebrew casks
+#     homebrew_tap: "name={{item.tap}}"
 
-  - name: "{{action}} brew packages: {{item}}"
-    homebrew:
-      name: "{{item.packages}}"
-      state: "{{state}}"
-  with_items: "{{custom_brews}}"
+#   - name: "{{action}} brew packages: {{item}}"
+#     homebrew:
+#       name: "{{item.packages}}"
+#       state: "{{state}}"
+#   with_items: "{{custom_brews}}"

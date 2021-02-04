@@ -10,6 +10,27 @@ asdf_dir: "{{ ansible_user_dir }}/.asdf"
 asdf_bin: "{{ asdf_dir}}/bin/asdf"
 
 asdf_plugins:
+  # - name: perl
+  #   brew_deps: []
+  #   repository: "https://github.com/ouest/asdf-perl.git"
+  #   versions:
+  #     - 5.6.0
+  #   delete_versions: []
+  #   global: 5.6.0
+  # - name: istioctl
+  #   brew_deps: []
+  #   repository: "https://github.com/rafik8/asdf-istioctl.git"
+  #   versions:
+  #     - 1.8.2
+  #   delete_versions: []
+  #   global: 1.8.2
+  # - name: R
+  #   brew_deps: []
+  #   repository: "https://github.com/taiar/asdf-R.git"
+  #   versions:
+  #     - 4.0.3
+  #   delete_versions: []
+  #   global: 4.0.3
   - name: golang
     brew_deps: []
     repository: "https://github.com/kennyp/asdf-golang.git"
@@ -73,20 +94,13 @@ asdf_plugins:
       - 3.5.1
     delete_versions: []
     global: 3.5.1
-  - name: istioctl
-    brew_deps: []
-    repository: "https://github.com/rafik8/asdf-istioctl.git"
-    versions:
-      - 1.8.2
-    delete_versions: []
-    global: 1.8.2
   - name: jq
     brew_deps: []
     repository: "https://github.com/ryodocx/asdf-jq.git "
     versions:
-      - 1.4
+      - 1.6
     delete_versions: []
-    global: 1.4
+    global: 1.6
   - name: jsonnet
     brew_deps: []
     repository: "https://github.com/Banno/asdf-jsonnet.git"
@@ -129,20 +143,6 @@ asdf_plugins:
       - 5.4.2
     delete_versions: []
     global: 5.4.2
-  - name: perl
-    brew_deps: []
-    repository: "https://github.com/ouest/asdf-perl.git"
-    versions:
-      - 5.6.0
-    delete_versions: []
-    global: 5.6.0
-  - name: R
-    brew_deps: []
-    repository: "https://github.com/taiar/asdf-R.git"
-    versions:
-      - 4.0.3
-    delete_versions: []
-    global: 4.0.3
   - name: skaffold
     brew_deps: []
     repository: "https://github.com/virtualstaticvoid/asdf-skaffold.git"
@@ -164,13 +164,6 @@ asdf_plugins:
       - 0.28.1
     delete_versions: []
     global: 0.28.1
-  # - name: vagrant
-  #   brew_deps: []
-  #   repository: ""
-  #   versions:
-  #     -
-  #   delete_versions: []
-  #   global:
   - name: vault
     brew_deps: []
     repository: "https://github.com/Banno/asdf-hashicorp.git"

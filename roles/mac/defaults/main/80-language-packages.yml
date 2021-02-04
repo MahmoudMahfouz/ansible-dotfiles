@@ -20,13 +20,13 @@ npms:
 - grunt-cli
 - gulp
 - ionic
-- ios-deploy
-- ios-sim
+# - ios-deploy
+# - ios-sim
 - jshint
 - localtunnel
-- node-inspector
+# - node-inspector
 - nodemon
-- phonegap
+# - phonegap
 - pm2
 - strider
 - webkit-devtools-agent

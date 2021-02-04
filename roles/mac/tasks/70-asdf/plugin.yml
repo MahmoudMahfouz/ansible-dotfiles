@@ -1,6 +1,6 @@
 ---
 - name: "Install plugin {{asdf_plugin.name}}"
-  command: "bash -lc 'asdf plugin-add {{ asdf_plugin.name }} {{ asdf_plugin.repository | default() }}'"
+  command: "bash -lc '{{ asdf_bin}} plugin-add {{ asdf_plugin.name }} {{ asdf_plugin.repository | default() }}'"
   # args:
   #   creates: "{{ asdf_dir }}/plugins/{{ asdf_plugin.name }}"
   #   # chdir: "{{ asdf_base_path }}"
@@ -37,8 +37,8 @@
   with_items: "{{ asdf_plugin.versions }}"
 
 - name: "Remove ASDF versions for {{asdf_plugin.name}}"
-  command: "bash -lc 'asdf uninstall {{ asdf_plugin.name }} {{ item }}'"
+  command: "bash -lc '{{ asdf_bin}} uninstall {{ asdf_plugin.name }} {{ item }}'"
   with_items: "{{ asdf_plugin.delete_versions }}"
 
 - name: "Set global ASDF version for {{asdf_plugin.name}}"
-  command: "bash -lc 'asdf global {{ asdf_plugin.name }} {{ asdf_plugin.versions | last }}'"
+  command: "bash -lc '{{ asdf_bin}} global {{ asdf_plugin.name }} {{ asdf_plugin.versions | last }}'"
