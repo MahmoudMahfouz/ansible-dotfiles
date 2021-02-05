@@ -1,0 +1,7 @@
+- name: install homebrew casks
+  homebrew_tap: "name={{custom_brew.tap}}"
+
+- name: "{{action}} brew packages: {{custom_brew}}"
+  homebrew:
+    name: "{{custom_brew.packages}}"
+    state: "{{state}}"
