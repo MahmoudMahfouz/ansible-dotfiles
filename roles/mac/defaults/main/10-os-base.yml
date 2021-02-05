@@ -1,5 +1,6 @@
 ---
 # vars file for linux_base
+skip_brew: false
 
 git_config:
   name: M Saleh
@@ -67,6 +68,7 @@ brew_packages:
 - imagemagick
 - jq
 - kustomize
+- mas
 - moreutils
 - navi
 - openssl
