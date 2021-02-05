@@ -1,4 +1,7 @@
 ---
+- name: "ASDF Reshim"
+  command: "bash -lc '{{ asdf_bin}} reshim'"
+
 - name: Install pips
   ansible.builtin.pip:
     name: "{{ item }}"
