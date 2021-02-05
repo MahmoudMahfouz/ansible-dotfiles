@@ -1,5 +1,0 @@
----
-- name: Install NeoVim
-  homebrew:
-    name: neovim
-    state: "{{state}}"
