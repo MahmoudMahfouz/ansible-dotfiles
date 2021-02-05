@@ -130,6 +130,10 @@ cask_packages:
 - virtualbox
 - vlc
 
+mas_packages:
+# Trello
+- 1278508951
+
 osx_defaults:
 - com.apple.appstore ShowDebugMenu -bool true
 - com.apple.appstore WebKitDeveloperExtras -bool true
@@ -146,8 +150,8 @@ osx_defaults:
 - com.apple.finder QuitMenuItem -bool true
 - com.apple.finder ShowPathbar -bool true
 - com.apple.LaunchServices LSQuarantine -bool false
-# - com.apple.universalaccess closeViewScrollWheelToggle -bool true
-# - com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+- com.apple.universalaccess closeViewScrollWheelToggle -bool true
+- com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 - NSGlobalDomain ApplePressAndHoldEnabled -bool false
 - NSGlobalDomain com.apple.springing.enabled -bool true
 - NSGlobalDomain KeyRepeat -int 0
