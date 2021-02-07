@@ -8,9 +8,9 @@ git_config:
   editor: vim
 
 custom_brews:
-- tap: caskroom/fonts
+- tap: homebrew/cask-fonts
   packages:
-  - font-firacode-nerd-font
+  - font-hack-nerd-font
 apt_sources:
 - hi
 
@@ -89,6 +89,7 @@ cask_packages:
 # - android-studio
 - adoptopenjdk
 - appcleaner
+- authy
 # - Atom
 - balsamiq-wireframes
 - caffeine
@@ -131,6 +132,7 @@ cask_packages:
 - vagrant
 - virtualbox
 - vlc
+- xquartz
 
 mas_packages:
 # Trello
@@ -152,8 +154,8 @@ osx_defaults:
 - com.apple.finder QuitMenuItem -bool true
 - com.apple.finder ShowPathbar -bool true
 - com.apple.LaunchServices LSQuarantine -bool false
-- com.apple.universalaccess closeViewScrollWheelToggle -bool true
-- com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+# - com.apple.universalaccess closeViewScrollWheelToggle -bool true
+# - com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 - NSGlobalDomain ApplePressAndHoldEnabled -bool false
 - NSGlobalDomain com.apple.springing.enabled -bool true
 - NSGlobalDomain KeyRepeat -int 0

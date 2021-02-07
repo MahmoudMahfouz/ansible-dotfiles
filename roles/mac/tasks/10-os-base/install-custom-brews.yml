@@ -1,7 +1,9 @@
-- name: install homebrew casks
+- name: Add brew taps
   homebrew_tap: "name={{custom_brew.tap}}"
 
 - name: "{{action}} brew packages: {{custom_brew}}"
   homebrew:
+    update_homebrew: yes
     name: "{{custom_brew.packages}}"
     state: "{{state}}"
+  ignore_errors: true

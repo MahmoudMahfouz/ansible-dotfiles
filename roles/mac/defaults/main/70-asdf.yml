@@ -10,6 +10,101 @@ asdf_dir: "{{ ansible_user_dir }}/.asdf"
 asdf_bin: "{{ asdf_dir}}/bin/asdf"
 
 asdf_plugins:
+  - name: stern
+    brew_deps: []
+    repository: "https://github.com/looztra/asdf-stern"
+    versions:
+      - 1.14.0
+    delete_versions: []
+    global: 1.14.0
+  - name: tilt
+    brew_deps: []
+    repository: "https://github.com/eaceaser/asdf-tilt"
+    versions:
+      - 0.18.8
+    delete_versions: []
+    global: 0.18.8
+  - name: opa
+    # Open policy agent
+    brew_deps: []
+    repository: "https://github.com/tochukwuvictor/asdf-opa"
+    versions:
+      - 0.26.0
+    delete_versions: []
+    global: 0.26.0
+  - name: pluto
+    brew_deps: []
+    repository: "https://github.com/FairwindsOps/asdf-pluto"
+    versions:
+      - 4.0.4
+    delete_versions: []
+    global: 4.0.4
+  - name: rclone
+    brew_deps: []
+    repository: "https://github.com/johnlayton/asdf-rclone"
+    versions:
+      - 1.54.0
+    delete_versions: []
+    global: 1.54.0
+  - name: redis
+    brew_deps: []
+    repository: "https://github.com/smashedtoatoms/asdf-redis"
+    versions:
+      - 6.0.10
+    delete_versions: []
+    global: 6.0.10
+  - name: starship
+    # All terminals and shells prompt
+    brew_deps: []
+    repository: "https://github.com/grimoh/asdf-starship"
+    versions:
+      - 0.50.0
+    delete_versions: []
+    global: 0.50.0
+  - name: k9s
+    brew_deps: []
+    repository: "https://github.com/looztra/asdf-k9s"
+    versions:
+      - 0.24.2
+    delete_versions: []
+    global: 0.24.2
+  - name: tmux
+    brew_deps: []
+    repository: "https://github.com/aphecetche/asdf-tmux"
+    versions:
+      - 3.1c
+    delete_versions: []
+    global: 3.1c
+  - name: minikube
+    brew_deps: []
+    repository: "https://github.com/alvarobp/asdf-minikube.git"
+    versions:
+      - 1.17.1
+    delete_versions: []
+    global: 1.17.1
+  - name: gcloud
+    brew_deps: []
+    repository: "https://github.com/jthegedus/asdf-gcloud.git"
+    versions:
+      - 325.0.0
+    delete_versions: []
+    global: 325.0.0
+  - name: dive
+    # Tool for diving into container layers
+    brew_deps: []
+    repository: "https://github.com/looztra/asdf-dive"
+    versions:
+      - 0.9.2
+    delete_versions: []
+    global: 0.9.2
+  - name: doctl
+    # Digitalocean
+    brew_deps: []
+    repository: "https://github.com/maristgeek/asdf-doctl.git"
+    versions:
+      - 1.55.0
+    delete_versions: []
+    global: 1.55.0
   # - name: perl
   #   brew_deps: []
   #   repository: "https://github.com/ouest/asdf-perl.git"
@@ -17,20 +112,20 @@ asdf_plugins:
   #     - 5.6.0
   #   delete_versions: []
   #   global: 5.6.0
-  # - name: istioctl
-  #   brew_deps: []
-  #   repository: "https://github.com/rafik8/asdf-istioctl.git"
-  #   versions:
-  #     - 1.8.2
-  #   delete_versions: []
-  #   global: 1.8.2
-  # - name: R
-  #   brew_deps: []
-  #   repository: "https://github.com/taiar/asdf-R.git"
-  #   versions:
-  #     - 4.0.3
-  #   delete_versions: []
-  #   global: 4.0.3
+  - name: istioctl
+    brew_deps: []
+    repository: "https://github.com/virtualstaticvoid/asdf-istioctl.git"
+    versions:
+      - 1.8.2
+    delete_versions: []
+    global: 1.8.2
+  - name: R
+    brew_deps: []
+    repository: "https://github.com/taiar/asdf-R.git"
+    versions:
+      - 4.0.3
+    delete_versions: []
+    global: 4.0.3
   - name: golang
     brew_deps: []
     repository: "https://github.com/kennyp/asdf-golang.git"

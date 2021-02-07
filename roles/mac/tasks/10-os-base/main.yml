@@ -10,7 +10,7 @@
       mode: 0440
 
 - include_tasks: "{{role_path}}/tasks/10-os-base/install-darwin.yml"
-  when: ansible_os_family == 'Darwin' and not skip_brew
+  when: ansible_os_family == 'Darwin' and skip_brew == false
 
 # - include_tasks: "{{role_path}}/tasks/10-os-base/install-debian.yml"
 #   when: ansible_os_family == 'Debian'
@@ -19,6 +19,21 @@
   copy:
     src: editorconfig
     dest: "{{ ansible_env.HOME }}/.editorconfig"
+
+- name: Karabiner config
+  copy:
+    src: karabiner.json
+    dest: "{{ ansible_env.HOME }}/.config/karabiner/karabiner.json"
+
+- name: Phoenix config
+  copy:
+    src: phoenix.js
+    dest: "{{ ansible_env.HOME }}/.phoenix.js"
+
+- name: Sampler config
+  copy:
+    src: sampler.yml
+    dest: "{{ ansible_env.HOME }}/.sampler.yml"
 
 - name: Setup Global gitignore
   copy:
@@ -30,5 +45,3 @@
     src: gitconfig.j2
     dest: "{{ ansible_env.HOME }}/.gitconfig"
 
-# TODO: Configure phoenix
-# TODO: Configure sampler

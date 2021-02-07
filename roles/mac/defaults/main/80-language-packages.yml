@@ -29,7 +29,7 @@ npms:
 # - phonegap
 - pm2
 - strider
-- webkit-devtools-agent
+# - webkit-devtools-agent
 - yo
 
 pips:
