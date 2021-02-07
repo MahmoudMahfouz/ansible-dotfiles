@@ -75,6 +75,7 @@ brew_packages:
 - reattach-to-user-namespace
 - sampler
 - scmpuff
+- screen
 - skaffold
 - tealdeer
 - terraform
