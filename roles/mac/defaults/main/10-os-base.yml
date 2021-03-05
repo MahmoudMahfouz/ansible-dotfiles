@@ -3,9 +3,9 @@
 skip_brew: false
 
 git_config:
-  name: M Saleh
-  email: mahmoud.mahfouz.zaza@gmail.com
-  editor: vim
+  name: Zaza Saleh      
+  email: zaza.saleh@messagebird.com
+  editor: "{{ shell_editor }}"
 
 custom_brews:
 - tap: homebrew/cask-fonts
@@ -148,7 +148,7 @@ osx_defaults:
 - com.apple.dock autohide-delay -float 0
 - com.apple.dock autohide-time-modifier -float 0
 - com.apple.dock enable-spring-load-actions-on-all-items -bool true
-- com.apple.dock minimize-to-application -bool true
+- com.apple.dock minimize-to-application -bool false
 - com.apple.dock show-process-indicators -bool true
 - com.apple.dock showhidden -bool true
 - com.apple.finder FXDefaultSearchScope -string "SCcf"

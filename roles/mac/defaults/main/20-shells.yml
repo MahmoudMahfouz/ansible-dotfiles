@@ -13,11 +13,11 @@ fish_version: 3.0.2
 # fish_rc: "{{ ansible_user_dir }}/.config/fish/config.fish"
 fish_rc: "/usr/local/share/fish/config.fish"
 fish_config: "{{ ansible_user_dir }}/.config/fish"
+fish_local_rc: "{{ ansible_user_dir }}/.config/fish/config.fish"
 fisher_url: https://git.io/fisher
 fisher_dir: '{{ ansible_user_dir }}/.config/fish/functions'
 fisher: '{{ fisher_dir }}/fisher.fish'
 
-default_shell: "{{fish_bin}}"
 
 fish_plugins:
 - IlanCosman/tide
@@ -27,6 +27,8 @@ fish_plugins:
 zsh_user: "{{ ansible_user_id }}"
 
 zsh_rc: "{{ ansible_user_dir }}/.zshrc"
+zsh_bin: "/usr/local/bin/zsh"
+default_shell: "{{zsh_bin}}"
 # .zshrc config
 zsh_hist_stamps: yyyy-mm-dd
 zsh_share_history: no

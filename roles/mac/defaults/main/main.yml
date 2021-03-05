@@ -5,5 +5,6 @@ state: present
 # The action is used for titles only
 action: install
 
-shell_editor: vim
+shell_editor: nvim
 shell_term: xterm-256color
+shims_path: "{{ asdf_dir }}/shims/kubectl"

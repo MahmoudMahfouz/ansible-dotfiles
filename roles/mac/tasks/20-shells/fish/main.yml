@@ -32,13 +32,19 @@
   command: '{{ fish_bin }} -c fisher install {{item}}'
   with_items: "{{fish_plugins}}"
 
-# - name: Write .fish rc
-#   template:
-#     src: config.fish.j2
-#     dest: "{{ fish_rc }}"
+- name: Add Source extra local fish_rc
+  blockinfile:
+    path: "{{fish_rc}}"
+    block: |
+      source "{{fish_local_rc}}"
 
-- name: Write fish variables
-  copy:
-    src: fish_variables
-    dest: "{{ fish_config }}/fish_variables"
+- name: Write .fish rc
+  template:
+    src: config.fish.j2
+    dest: "{{ fish_rc }}"
+
+# - name: Write fish variables
+#   copy:
+#     src: fish_variables
+#     dest: "{{ fish_config }}/fish_variables"
 

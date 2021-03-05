@@ -1,6 +1,6 @@
 ---
 - name: Install Docker
   community.general.homebrew_cask:
-    name: docker
+    name: [ "docker", "docker-slim"]
     state: "{{state}}"
     install_options: force
