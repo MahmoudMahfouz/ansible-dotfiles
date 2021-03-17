@@ -1,6 +1,5 @@
 add_ssh_keys() {
-    ssh-add -K ~/.ssh/*
-    ssh-add -K ~/.ssh_private_keys/id_rsa
+    ls ~/.ssh | grep -v "known_hosts" | grep -v ".pub" | xargs -I{} ssh-add ~/.ssh/{}
 }
 
 add_ssh_keys

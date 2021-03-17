@@ -1,0 +1,10 @@
+config_dir: "{{ ansible_user_dir }}/.config"
+shell_completions_path: "{{ config_dir }}/completions"
+
+
+shell_completions_data:
+    - name: "kubectl"
+      cmd: "{{asdf_dir}}/shims/kubectl completion zsh"
+
+    - name: "skaffold"
+      cmd: "skaffold completion zsh"

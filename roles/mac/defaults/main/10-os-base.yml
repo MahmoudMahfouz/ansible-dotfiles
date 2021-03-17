@@ -3,7 +3,7 @@
 skip_brew: false
 
 git_config:
-  name: Zaza Saleh      
+  name: Zaza Saleh
   email: zaza.saleh@messagebird.com
   editor: "{{ shell_editor }}"
 
@@ -53,6 +53,7 @@ apt_packages:
 brew_packages:
 - ack
 - ant
+- bash-completion
 - cmake
 - coreutils
 - ctags-exuberant

@@ -242,9 +242,9 @@ asdf_plugins:
     brew_deps: []
     repository: "https://github.com/virtualstaticvoid/asdf-skaffold.git"
     versions:
-      - 2.19.0
+      - 1.20.0
     delete_versions: []
-    global: 2.19.0
+    global: 1.20.0
   - name: terraform
     brew_deps: []
     repository: "https://github.com/Banno/asdf-hashicorp.git"

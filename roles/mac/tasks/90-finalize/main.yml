@@ -1,0 +1,10 @@
+---
+- name: Create shell completions dir
+  file:
+    path: "{{ shell_completions_path }}"
+    state: directory
+
+- include: "{{role_path}}/tasks/90-finalize/write_completions.yml"
+  loop_control:
+    loop_var: elem
+  with_items: "{{shell_completions_data}}"

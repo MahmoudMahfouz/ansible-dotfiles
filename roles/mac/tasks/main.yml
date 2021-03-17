@@ -1,77 +1,82 @@
 ---
-- name: Install base OS
-  tags:
-      - git
-      - gitignore
-      - global
-      - packages
-  import_tasks: roles/{{role_name}}/tasks/10-os-base/main.yml
+# - name: Install base OS
+#   tags:
+#       - git
+#       - gitignore
+#       - global
+#       - packages
+#   import_tasks: roles/{{role_name}}/tasks/10-os-base/main.yml
 
-- name: Install Shells
-  tags:
-      - Zsh
-      - fish
-      - extras
-  import_tasks: roles/{{role_name}}/tasks/20-shells/main.yml
+# - name: Install Shells
+#   tags:
+#       - Zsh
+#       - fish
+#       - extras
+#   import_tasks: roles/{{role_name}}/tasks/20-shells/main.yml
 
-- name: Install Terminals
-  tags:
-      - alacritty
-      - kitty
-      - iterm
-  import_tasks: roles/{{role_name}}/tasks/30-terminals/main.yml
+# - name: Install Terminals
+#   tags:
+#       - alacritty
+#       - kitty
+#       - iterm
+#   import_tasks: roles/{{role_name}}/tasks/30-terminals/main.yml
 
-- name: Install and config terminal tools
-  tags:
-      - phoenix
-      - tmux
-  import_tasks: roles/{{role_name}}/tasks/40-terminal-tools/main.yml
+# - name: Install and config terminal tools
+#   tags:
+#       - phoenix
+#       - tmux
+#   import_tasks: roles/{{role_name}}/tasks/40-terminal-tools/main.yml
 
-- name: Install and config text editors
-  tags:
-      - vim
-      - vscode
-  import_tasks: roles/{{role_name}}/tasks/50-text-editors/main.yml
+# - name: Install and config text editors
+#   tags:
+#       - vim
+#       - vscode
+#   import_tasks: roles/{{role_name}}/tasks/50-text-editors/main.yml
 
-- name: Install Docker
-  tags:
-      - docker
-  import_tasks: roles/{{role_name}}/tasks/60-docker/main.yml
+# - name: Install Docker
+#   tags:
+#       - docker
+#   import_tasks: roles/{{role_name}}/tasks/60-docker/main.yml
 
-- name: Install ASDF
-  tags:
-      - go
-      - python
-      - node.js
-      - ruby
-      - c++
-      - java
-      - haskell
-      - erlang
-      - rust
-      - helm
-      - istioctl
-      - jq
-      - jsonnet
-      - kubectl
-      - kubectx
-      - kubefed
-      - elasticsearch
-      - lua
-      - perl
-      - R
-      - skaffold
-      - terraform
-      - terragrunt
-      - vagrant
-      - vault
-      - yq
-      - consul
-  import_tasks: roles/{{role_name}}/tasks/70-asdf/main.yml
+# - name: Install ASDF
+#   tags:
+#       - go
+#       - python
+#       - node.js
+#       - ruby
+#       - c++
+#       - java
+#       - haskell
+#       - erlang
+#       - rust
+#       - helm
+#       - istioctl
+#       - jq
+#       - jsonnet
+#       - kubectl
+#       - kubectx
+#       - kubefed
+#       - elasticsearch
+#       - lua
+#       - perl
+#       - R
+#       - skaffold
+#       - terraform
+#       - terragrunt
+#       - vagrant
+#       - vault
+#       - yq
+#       - consul
+#   import_tasks: roles/{{role_name}}/tasks/70-asdf/main.yml
 
-- name: Install some packages
+# - name: Install some packages
+#   tags:
+#       - NPM
+#       - gems
+#       - pips
+#   import_tasks: roles/{{role_name}}/tasks/80-language-packages/main.yml
+
+- name: Setup completions
   tags:
-      - NPM
-      - gems
-      - pips
-  import_tasks: roles/{{role_name}}/tasks/80-language-packages/main.yml
+      - Autocompletion
+  import_tasks: roles/{{role_name}}/tasks/90-finalize/main.yml

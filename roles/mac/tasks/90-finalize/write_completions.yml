@@ -1,0 +1,10 @@
+---
+- name: "Get completions for {{ elem.name }}"
+  command: "{{ elem.cmd }}"
+  register: result
+
+- name: Write completion to file
+  copy:
+    dest: "{{ shell_completions_path }}/{{elem.name}}.elem.sh"
+    content: "{{ result.stdout }}"
+    mode: "0755"
