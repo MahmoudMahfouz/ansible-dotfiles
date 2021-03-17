@@ -5,6 +5,8 @@
 ###
 # Autoload zsh modules when they are referenced
 ###
+fpath=({{ohmyzsh_completions_path}} $fpath)
+
 zmodload -a zsh/stat stat
 zmodload -a zsh/zpty zpty
 zmodload -a zsh/zprof zprof
@@ -132,10 +134,14 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240" # gray highlight
 for file in {{ dotfiles_dir }}/*.sh; do
     source "$file";
 done
-for file in {{ shell_completions_path }}/*.sh; do
+for file in {{ zsh_completions_path }}/*.sh; do
+
     source "$file";
 done
-kubectl completion zsh > "${fpath[1]}/_kubectl"
+# for file in {{ ohmyzsh_completions_path }}/*.zsh; do
+#     source "$file";
+# done
+# kubectl completion zsh > "${fpath[1]}/_kubectl"
 
 
 {% if zsh_load_etc_profile %}source /etc/profile{% endif %}
@@ -148,3 +154,15 @@ kubectl completion zsh > "${fpath[1]}/_kubectl"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+### Fix slowness of pastes with zsh-syntax-highlighting.zsh
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+### Fix slowness of pastes

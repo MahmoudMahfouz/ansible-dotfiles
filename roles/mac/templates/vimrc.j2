@@ -2,8 +2,8 @@ syntax on           " syntax highlighting
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set rtp+={{vim_path}}/bundle/Vundle.vim
-let path="{{vim_path}}/bundle"
+set rtp+={{vundle_path}}
+let path="{{bundle_path}}"
 let mapleader = " "     " set leader key
 
 if has("autocmd")
@@ -147,4 +147,4 @@ Plugin 'tpope/vim-rails'
 Plugin 'michalliu/sourcebeautify.vim'
 call vundle#end()
 filetype plugin indent on    " required
-source {{vim_path}}/.vim-settings
+source {{vim_path}}/vimrc-settings

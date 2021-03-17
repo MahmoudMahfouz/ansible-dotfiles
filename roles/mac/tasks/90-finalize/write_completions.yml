@@ -5,6 +5,6 @@
 
 - name: Write completion to file
   copy:
-    dest: "{{ shell_completions_path }}/{{elem.name}}.elem.sh"
+    dest: "{{ zsh_completions_path }}/{{elem.name}}.elem.sh"
     content: "{{ result.stdout }}"
     mode: "0755"

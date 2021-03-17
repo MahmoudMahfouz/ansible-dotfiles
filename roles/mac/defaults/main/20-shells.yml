@@ -3,8 +3,7 @@
 #############
 # SHELLS
 #############
-dotfiles_dir: '{{ ansible_user_dir }}/.dotfiles'
-dotfiles_path: '{{ ansible_user_dir }}/.dotfiles'
+dotfiles_dir: '{{ ansible_user_dir }}/.config/.dotfiles'
 install_fish: true
 install_zsh: true
 nix_bins: /usr/local/bin
@@ -56,7 +55,7 @@ zsh_antigen_version: master
 zsh_fzf_version: 0.17.4
 
 zsh_antigen_bundles:
-  - { name: command-not-found, when: "{{ ansible_os_family != 'Darwin' }}" } # too slow on OSX
+#   - { name: command-not-found, when: "{{ ansible_os_family != 'Darwin' }}" } # too slow on OSX
   - { name: brew, command: brew }
   - { name: docker, command: docker }
   - { name: docker-compose, command: docker-compose }
@@ -66,19 +65,12 @@ zsh_antigen_bundles:
   - { name: httpie, command: http }
   - { name: golang, command: go }
   - { name: gulp, command: gulp }
-  - { name: helm, command: helm }
   - { name: kubectl, command: kubectl }
-  - { name: pip, command: pip }
-  - { name: rake, command: rake }
-  - { name: symfony2, command: symfony }
   - { name: systemd, command: systemctl }
   - python
   - { name: tmux, command: tmux }
   - { name: vagrant, command: vagrant }
-  - { name: viasite/drall, command: drall }
-  - { name: viasite/drupal-scripts, command: drs }
-  - { name: viasite/server-scripts, command: dbdump }
-  - { name: viasite-ansible/zsh-ansible-server, command: ansible-deploy }
+  - { name: zsh-users/zsh-completions }
   - zsh_reload
 
   # on zsh 4.3.10 autosuggestions breaks multiline commands with \

@@ -8,3 +8,9 @@
 
 - include_tasks: "config_Darwin.yml"
   when: ansible_os_family == 'Debian'
+
+- name: Install Vundle
+  ansible.builtin.git:
+    repo: https://github.com/VundleVim/Vundle.vim.git
+    dest: "{{ vundle_path }}"
+    update: no

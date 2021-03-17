@@ -12,6 +12,7 @@
     name: "{{ item }}"
     global: yes
   with_items: "{{ npms }}"
+  ignore_errors: true
 
 - name: Install Gems
   community.general.gem:
