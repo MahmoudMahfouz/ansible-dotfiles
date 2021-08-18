@@ -1,13 +1,13 @@
-- name: "{{action}} brew packages: {{brew_packages}}"
-  homebrew:
-    name: "{{brew_packages}}"
-    state: "{{state}}"
+# - name: "{{action}} brew packages: {{brew_packages}}"
+#   homebrew:
+#     name: "{{brew_packages}}"
+#     state: "{{state}}"
 
-- name: "{{action}} casks: {{cask_packages}}"
-  community.general.homebrew_cask:
-    name: "{{cask_packages}}"
-    state: "{{state}}"
-    install_options: force
+# - name: "{{action}} casks: {{cask_packages}}"
+#   community.general.homebrew_cask:
+#     name: "{{cask_packages}}"
+#     state: "{{state}}"
+#     install_options: force
 
 - name: "{{action}} some OSX defaults"
   community.general.osx_defaults:

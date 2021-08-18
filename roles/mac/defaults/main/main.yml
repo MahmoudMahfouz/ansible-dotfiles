@@ -7,5 +7,7 @@ action: install
 
 shell_editor: nvim
 shell_term: xterm-256color
-shims_path: "{{ asdf_dir }}/shims/kubectl"
 config_dir: "{{ ansible_user_dir }}/.config"
+
+scm_dir: /Users/zs/md/projects/work/mb
+

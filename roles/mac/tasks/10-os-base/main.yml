@@ -20,6 +20,12 @@
     src: editorconfig
     dest: "{{ ansible_env.HOME }}/.editorconfig"
 
+- name: Create a Karabiner directory if it does not exist
+  ansible.builtin.file:
+    dest: "{{ ansible_env.HOME }}/.config/karabiner/"
+    state: directory
+    mode: '0755'
+
 - name: Karabiner config
   copy:
     src: karabiner.json
@@ -44,4 +50,16 @@
   ansible.builtin.template:
     src: gitconfig.j2
     dest: "{{ ansible_env.HOME }}/.gitconfig"
+
+
+- name: Create directory for ghorg
+  ansible.builtin.file:
+    dest: "{{ config_dir }}/ghorg"
+    state: directory
+    mode: '0755'
+
+- name: Copy and Template ghorg sample
+  template:
+    src: ghorg.yaml.j2
+    dest: "{{ config_dir }}/ghorg/conf.yaml"
 

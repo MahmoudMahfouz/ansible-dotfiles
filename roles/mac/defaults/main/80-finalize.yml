@@ -1,3 +1,15 @@
+zsh_completions_path: "{{ config_dir }}/zsh/completions"
+fish_completions_path: "{{ config_dir }}/fish/completions"
+ohmyzsh_completions_path: "{{ config_dir }}/zsh/oh-my-zsh/completions"
+
+
+shell_completions_data:
+    - name: "kubectl"
+      cmd: "{{asdf_dir}}/shims/kubectl completion zsh"
+
+    - name: "skaffold"
+      cmd: "{{asdf_dir}}/shims/skaffold completion zsh"
+
 gems:
 - bundle
 - chef

@@ -23,3 +23,15 @@
     - item.value is defined
     - iterm2_defaults|length > 0
     - iterm2_domain is defined
+
+- name: Create directory for iterm2 settings
+  ansible.builtin.file:
+    dest: "{{ iterm_config }}"
+    src: "{{ playbook_dir }}/config/iterm2"
+    state: link
+    mode: '0755'
+
+- name: Copy iterm2 settings
+  copy:
+    src: iterm2-settings
+    dest: "{{ iterm_config }}"

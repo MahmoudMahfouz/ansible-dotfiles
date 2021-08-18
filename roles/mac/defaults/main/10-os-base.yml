@@ -11,6 +11,9 @@ custom_brews:
 - tap: homebrew/cask-fonts
   packages:
   - font-hack-nerd-font
+- tap: gabrie30/utils
+  packages:
+  - ghorg
 apt_sources:
 - hi
 
@@ -67,9 +70,6 @@ brew_packages:
 - htop
 - iftop
 - imagemagick
-- jq
-- kubectx
-- kustomize
 - mas
 - moreutils
 - navi
@@ -77,10 +77,7 @@ brew_packages:
 - reattach-to-user-namespace
 - sampler
 - scmpuff
-- screen
-- skaffold
 - tealdeer
-- terraform
 - the_silver_searcher
 - tree
 - wget
@@ -91,17 +88,13 @@ cask_packages:
 # - adobe-photoshop-lightroom
 - alfred
 # - android-studio
-- adoptopenjdk
 - appcleaner
 - authy
-# - Atom
 - balsamiq-wireframes
+- betterzip
 - caffeine
-# - calibre
 - cheatsheet
-# - day-o
 - disk-inventory-x
-# - franz
 - expressvpn
 - filebot
 - flux
@@ -112,14 +105,9 @@ cask_packages:
 # - Google-photos-backup-and-sync
 # - intellij-idea-ce
 # - istat-menus
-# - karabiner
-# - macdown
-- lens
-- meld
 - Megasync
 # - mongo-management-studio
 - karabiner-elements
-- onyx
 - phoenix
 - product-hunt
 - sequel-pro
@@ -164,9 +152,12 @@ osx_defaults:
 - NSGlobalDomain ApplePressAndHoldEnabled -bool false
 - NSGlobalDomain com.apple.springing.enabled -bool true
 - NSGlobalDomain KeyRepeat -int 0
+- NSGlobalDomain InitialKeyRepeat -int 0
 - NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 - NSGlobalDomain NSDisableAutomaticTermination -bool true
 - NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -int 1
 - com.apple.AppleMultitouchTrackpad Clicking -int 1
 - com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 1
+- com.googlecode.iterm2 PrefsCustomFolder -string {{ iterm_config }}
+- com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 

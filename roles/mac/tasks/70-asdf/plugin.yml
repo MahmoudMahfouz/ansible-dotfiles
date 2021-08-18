@@ -33,7 +33,7 @@
     state: "{{state}}"
 
 - name: "Install ASDF versions for {{asdf_plugin.name}}"
-  command: "bash -lc 'source {{asdf_dir}}/asdf.sh && {{asdf_bin}} install {{ asdf_plugin.name }} {{ item }}'"
+  command: "bash -lc 'source {{asdf_dir}}/asdf.sh && {{asdf_plugin.prefix}} {{asdf_bin}} install {{ asdf_plugin.name }} {{ item }}'"
   with_items: "{{ asdf_plugin.versions }}"
 
 - name: "Remove ASDF versions for {{asdf_plugin.name}}"
