@@ -319,3 +319,35 @@ asdf_plugins:
       - 1.9.3
     delete_versions: []
     global: 1.9.3
+  - name: velero
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/looztra/asdf-velero"
+    versions:
+      - v1.7.1
+    delete_versions: []
+    global: v1.7.1
+  - name: sops
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/feniix/asdf-sops.git"
+    versions:
+      - 3.7.1
+    delete_versions: []
+    global: 3.7.1
+  - name: kustomize
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/Banno/asdf-kustomize.git"
+    versions:
+      - 4.4.1
+    delete_versions: []
+    global: 4.4.1
+  - name: flux2
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/tablexi/asdf-flux2.git"
+    versions:
+      - 0.24.0
+    delete_versions: []
+    global: 0.24.0

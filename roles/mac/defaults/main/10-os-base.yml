@@ -70,6 +70,7 @@ brew_packages:
 - htop
 - iftop
 - imagemagick
+- kind
 - mas
 - moreutils
 - navi
