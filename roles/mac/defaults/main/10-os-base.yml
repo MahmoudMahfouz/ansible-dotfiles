@@ -20,6 +20,12 @@ apt_sources:
 apt_packages:
 - ant
 - build-essential
+# R-lang deps
+- cairo
+- libxt
+- pcre2
+- xz
+
 - cmake
 - coreutils
 - curl
@@ -96,7 +102,8 @@ cask_packages:
 - caffeine
 - cheatsheet
 - disk-inventory-x
-- expressvpn
+- discord
+# - expressvpn
 - filebot
 - flux
 - gas-mask
@@ -116,15 +123,15 @@ cask_packages:
 - sketch-toolbox
 - skitch
 - skyfonts
-- skype
+# - skype
 - slack
 - spectacle
 - spotify
 - ticktick
-- tor-browser
+# - tor-browser
 - Transmission
 - vagrant
-- virtualbox
+# - virtualbox
 - vlc
 - xquartz
 

@@ -1,9 +1,9 @@
 ---
-- include_tasks: "{{role_path}}/tasks/30-terminals/kitty/main.yml"
-  when: install_kitty
-
-- include_tasks: "{{role_path}}/tasks/30-terminals/alacritty/main.yml"
-  when: install_alacritty
+# - include_tasks: "{{role_path}}/tasks/30-terminals/kitty/main.yml"
+#   when: install_kitty
+# 
+# - include_tasks: "{{role_path}}/tasks/30-terminals/alacritty/main.yml"
+#   when: install_alacritty
 
 - include_tasks: "{{role_path}}/tasks/30-terminals/iterm/main.yml"
   when: install_iterm

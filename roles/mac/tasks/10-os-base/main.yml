@@ -10,7 +10,7 @@
       mode: 0440
 
 - include_tasks: "{{role_path}}/tasks/10-os-base/install-darwin.yml"
-  when: ansible_os_family == 'Darwin' and skip_brew == false
+  # when: ansible_os_family == 'Darwin' and skip_brew == false
 
 # - include_tasks: "{{role_path}}/tasks/10-os-base/install-debian.yml"
 #   when: ansible_os_family == 'Debian'

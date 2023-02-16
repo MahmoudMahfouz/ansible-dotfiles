@@ -31,7 +31,7 @@
     state: link
     mode: '0755'
 
-- name: Copy iterm2 settings
-  copy:
-    src: iterm2-settings
-    dest: "{{ iterm_config }}"
+# - name: Copy iterm2 settings
+#   copy:
+#     src: iterm2-settings
+#     dest: "{{ iterm_config }}"
