@@ -1,0 +1,47 @@
+---
+
+- name: Update package cache
+  package:
+    update_cache: yes
+  when: ansible_os_family != 'Darwin'
+
+- name: Install zsh
+  homebrew:
+    name:
+      - zsh
+    state: present
+  # brew don't work from root user on macOS
+  when: ansible_os_family == 'Darwin'
+
+- name: Clone antigen {{ zsh_antigen_version }}
+  git:
+    repo: https://github.com/zsh-users/antigen.git
+    dest: "{{ zsh_antigen_path }}/antigen"
+    version: "{{ zsh_antigen_version }}"
+    force: yes
+  become: yes
+  register: zsh_register_antigen_clone
+
+- name: Clone iwfmp/mc-solarized-skin
+  git:
+    repo: https://github.com/iwfmp/mc-solarized-skin.git
+    version: master
+    dest: "{{ ansible_user_dir }}/.mc/lib/mc-solarized"
+    force: yes
+  become: yes
+  when: zsh_mc_solarized_skin and not zsh_shared
+
+- name: Set zsh_fzf_path to /usr/local/bin
+  set_fact:
+    zsh_fzf_path: /usr/local/bin
+  changed_when: false
+  when: zsh_shared
+
+- name: Set directory permissions
+  become: true
+  file:
+    name: "{{ zsh_antigen_path }}"
+    owner: "{{ zsh_user }}"
+    group: "{{ zsh_user_group }}"
+    recurse: yes
+  changed_when: false

@@ -1,0 +1,29 @@
+---
+
+- include_tasks: "{{role_path}}/tasks/80-finalize/shell-finalize.yml"
+
+- name: "ASDF Reshim"
+  command: "bash -lc '{{ asdf_bin}} reshim'"
+
+- name: Install pips
+  ansible.builtin.pip:
+    name: "{{ item }}"
+  with_items: "{{ pips }}"
+  environment:
+    PATH: "{{asdf_shims}}:{{asdf_bin}}:{{ ansible_env.PATH }}"
+
+- name: Install NPMs
+  community.general.npm:
+    name: "{{ item }}"
+    global: yes
+  with_items: "{{ npms }}"
+  ignore_errors: true
+  environment:
+    PATH: "{{asdf_shims}}:{{asdf_bin}}:{{ ansible_env.PATH }}"
+
+- name: Install Gems
+  community.general.gem:
+    name: "{{ item }}"
+  with_items: "{{ gems }}"
+  environment:
+    PATH: "{{asdf_shims}}:{{asdf_bin}}:{{ ansible_env.PATH }}"

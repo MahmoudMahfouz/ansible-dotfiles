@@ -1,0 +1,40 @@
+---
+- name: Create shell completions dir
+  file:
+    path: "{{ config_dir }}/{{ item }}/completions"
+    state: directory
+  with_items: ["zsh", "fish"]
+
+- name: Create shell completions dir
+  file:
+    path: "{{ ohmyzsh_completions_path }}"
+    state: directory
+
+- include: "{{role_path}}/tasks/80-finalize/write_completions.yml"
+  loop_control:
+    loop_var: elem
+  with_items: "{{shell_completions_data}}"
+
+- name: Add kubectx.fish
+  copy:
+    src: completions/kubectx.fish
+    dest: "{{ fish_config }}/completions/kubectx.fish"
+    mode: "0755"
+
+- name: Add kubens.fish
+  copy:
+    src: completions/kubens.fish
+    dest: "{{ fish_config }}/completions/kubens.fish"
+    mode: "0755"
+
+- name: Add kubectx.zsh
+  copy:
+    src: completions/kubectx.zsh
+    dest: "{{ ohmyzsh_completions_path }}/_kubectx.zsh"
+    mode: "0755"
+
+- name: Add kubens.zsh
+  copy:
+    src: completions/kubens.zsh
+    dest: "{{ ohmyzsh_completions_path }}/_kubens.zsh"
+    mode: "0755"

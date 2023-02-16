@@ -1,0 +1,12 @@
+- name: create directory for wtfutils
+  ansible.builtin.file:
+    state: directory
+    mode: '0755'
+    path: "{{ wtf_utils_path }}"
+
+- name: Copy WTFutil config.yml
+  ansible.builtin.template:
+    dest: "{{ wtf_utils_path }}/config.yml"
+    src: wtfconfig.yml
+
+# TODO: add api keys to wtfutils

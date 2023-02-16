@@ -1,0 +1,6 @@
+---
+install_vscode: true
+install_vim: true
+vim_path: "{{config_dir}}/.vim"
+bundle_path: "{{vim_path}}/bundle"
+vundle_path: "{{bundle_path}}/Vundle.vim"

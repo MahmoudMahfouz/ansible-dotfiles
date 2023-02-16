@@ -1,0 +1,13 @@
+---
+# defaults file for linux_base
+
+state: present
+# The action is used for titles only
+action: install
+
+shell_editor: nvim
+shell_term: xterm-256color
+config_dir: "{{ ansible_user_dir }}/.config"
+
+scm_dir: /Users/zs/md/projects/work/mb
+

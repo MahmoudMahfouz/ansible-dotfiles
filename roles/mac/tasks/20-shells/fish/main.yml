@@ -1,0 +1,50 @@
+---
+- name: Brew install Fish shell
+  when: install_fish
+  community.general.homebrew:
+    name: fish
+    state: "{{state}}"
+    install_options: force
+
+- name: Check for fisher (github.com/jorgebucaran/fisher)
+  register: fisher_stat
+  stat:
+          path: '{{ fisher }}'
+  changed_when: not fisher_stat.stat.exists
+
+- name: Ensure fisher path exists
+  when: fisher_stat is changed
+  file:
+          path: '{{ fisher_dir }}'
+          state: directory
+
+- name: Install fisher (github.com/jorgebucaran/fisher)
+  when: fisher_stat is changed
+  get_url:
+      url: '{{ fisher_url }}'
+      dest: '{{ fisher }}'
+
+- name: Update fisher plugins
+  when: fisher_stat is changed
+  command: '{{ fish_bin }} -c fisher'
+
+- name: Install fish plugins using Fisher
+  command: '{{ fish_bin }} -c fisher install {{item}}'
+  with_items: "{{fish_plugins}}"
+
+- name: Add Source extra local fish_rc
+  blockinfile:
+    path: "{{fish_rc}}"
+    block: |
+      source "{{fish_local_rc}}"
+
+- name: Write .fish rc
+  template:
+    src: config.fish.j2
+    dest: "{{ fish_rc }}"
+
+# - name: Write fish variables
+#   copy:
+#     src: fish_variables
+#     dest: "{{ fish_config }}/fish_variables"
+

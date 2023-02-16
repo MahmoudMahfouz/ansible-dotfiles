@@ -1,0 +1,98 @@
+pagerduty:
+  apiKey: "p0d13*********************************************c3"
+  enabled: true
+  escalationFilter:
+  - "client-eng"
+  position:
+    top: 4
+    left: 3
+    height: 1
+    width: 2
+  scheduleIDs:
+  - "R2D24CD"
+  - "C3P05MF"
+  showIncidents: true
+  showOnCallEnd: true
+  showSchedules: true
+jira:
+  apiKey: "p0d13*********************************************c3"
+  colors:
+    rows:
+      even: "lightblue"
+      odd: "white"
+  domain: "https://umbrellacorp.atlassian.net"
+  email: "chriscummer@me.com"
+  enabled: true
+  jql: "issueType = Story"
+  position:
+    top: 4
+    left: 1
+    height: 1
+    width: 2
+  project: ["ProjectA", "ProjectB"]
+  refreshInterval: 900
+  username: "chris.cummer"
+  verifyServerCertificate: true
+prettyweather:
+    enabled: true
+    city: "amsterdam"
+    position:
+        top: 3
+        left: 5
+        height: 1
+        width: 1
+    refreshInterval: 300
+    unit: "m"
+    view: 0
+    language: "en"
+spotify:
+  enabled: true
+  colors:
+    label: "green"
+    text: "white"
+  position:
+    top: 1
+    left: 2
+    height: 1
+    width: 1
+  refreshInterval: 0
+gcal:
+  colors:
+    title: "red"
+    eventTime: "lightblue"
+    description: "yellow"
+    highlights:
+    - ['1on1|1\/11', 'green']
+    - ['apple|google|aws', 'blue']
+    - ['interview|meet', 'magenta']
+    - ['lunch', 'yellow']
+    past: "gray"
+  calendarReadLevel: "reader"
+  conflictIcon: "🚨"
+  currentIcon: "💥"
+  displayResponseStatus: true
+  email: "zaza.saleh@messagebird.com"
+  enabled: true
+  eventCount: 15
+  hourFormat: "12"
+  multiCalendar: true
+  position:
+    top: 0
+    left: 0
+    height: 4
+    width: 1
+  refreshInterval: 300
+  secretFile: "~/.config/wtf/gcal/client_secret.json"
+  showDeclined: true
+  showEndTime: false
+  timezone: "Europe/Amsterdam"
+  withLocation: true
+
+security:
+  enabled: true
+  position:
+    top: 1
+    left: 2
+    height: 1
+    width: 1
+  refreshInterval: 3600

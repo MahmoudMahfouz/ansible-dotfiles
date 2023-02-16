@@ -1,0 +1,56 @@
+zsh_completions_path: "{{ config_dir }}/zsh/completions"
+fish_completions_path: "{{ config_dir }}/fish/completions"
+ohmyzsh_completions_path: "{{ config_dir }}/zsh/oh-my-zsh/completions"
+
+
+shell_completions_data:
+    - name: "kubectl"
+      cmd: "{{asdf_dir}}/shims/kubectl completion zsh"
+
+    - name: "skaffold"
+      cmd: "{{asdf_dir}}/shims/skaffold completion zsh"
+
+gems:
+- bundle
+- chef
+- compass
+- tmuxinator
+- zeus
+
+npms:
+- autosave
+- bower
+- cordova
+- easymock
+- forever
+- generator-angular
+- generator-angular-cordova
+- generator-gruntfile
+- generator-node
+- generator-threejs
+- generator-webapp
+- grunt-cli
+- gulp
+- ionic
+# - ios-deploy
+# - ios-sim
+- jshint
+- localtunnel
+# - node-inspector
+- nodemon
+# - phonegap
+- pm2
+- strider
+# - webkit-devtools-agent
+- yo
+
+pips:
+# - cassandra-driver
+# - cql
+- flake8
+- neovim
+- psutil
+- powerline-status
+- pynvim
+- pyyaml
+- pyinstaller

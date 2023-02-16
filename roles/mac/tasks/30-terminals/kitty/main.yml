@@ -1,0 +1,17 @@
+---
+- name: Brew install Kitty
+  community.general.homebrew_cask:
+    name: kitty
+    state: "{{state}}"
+    install_options: force
+
+- name: Insert ZSH Fish completion
+  blockinfile:
+    path: "{{ zsh_rc }}"
+    block: |
+      autoload -Uz compinit
+      compinit
+      # Completion for kitty
+      kitty + complete setup zsh | source /dev/stdin
+
+# TODO: configure kitty using templates

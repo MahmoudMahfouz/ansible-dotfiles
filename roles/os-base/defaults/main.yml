@@ -1,6 +1,0 @@
----
-# defaults file for linux_base
-
-state: present
-# The action is used for titles only
-action: install

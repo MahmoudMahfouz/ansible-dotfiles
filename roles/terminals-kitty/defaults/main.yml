@@ -1,4 +1,0 @@
----
-# defaults file for terminals-kitty
-state: present
-action: Install

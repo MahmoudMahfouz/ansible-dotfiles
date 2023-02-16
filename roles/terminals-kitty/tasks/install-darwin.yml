@@ -1,3 +1,0 @@
-- homebrew_cask:
-    name: kitty
-    state: "{{state}}"

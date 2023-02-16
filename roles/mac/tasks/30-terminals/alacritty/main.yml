@@ -1,0 +1,6 @@
+---
+- name: Brew install alacritty
+  community.general.homebrew_cask:
+    name: alacritty
+    state: "{{state}}"
+    install_options: force

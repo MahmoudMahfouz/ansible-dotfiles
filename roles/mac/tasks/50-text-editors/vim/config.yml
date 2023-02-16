@@ -1,0 +1,30 @@
+---
+- name: Create configuration directory for vim
+  file:
+    state: 'directory'
+    dest: '{{vim_path }}/'
+    mode: '0755'
+
+- name: Configure vim global options
+  template:
+    src: 'vimrc.j2'
+    dest: '{{ vim_path }}/vimrc'
+    mode: '0744'
+
+- name: Configure vim plugins
+  template:
+    src: 'vimrc-settings.j2'
+    dest: '{{ vim_path }}/vimrc-settings'
+    mode: '0744'
+
+- name: Create a symbolic link
+  ansible.builtin.file:
+    src: '{{ vim_path }}/vimrc'
+    dest: '{{ ansible_user_dir }}/.vimrc'
+    state: link
+
+- name: install vundle plugin
+  shell: nvim +PluginInstall +qall --headless
+
+# TODO:
+# some how add those :CocInstall coc-tsserver coc-json coc-html coc-css
