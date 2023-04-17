@@ -25,8 +25,8 @@
     owner: "root"
     mode: 0755
 
-- include_tasks: "{{role_path}}/tasks/20-shells/fish/main.yml"
-  when: install_fish
+# - include_tasks: "{{role_path}}/tasks/20-shells/fish/main.yml"
+#   when: install_fish
 
 - include_tasks: "{{role_path}}/tasks/20-shells/zsh/main.yml"
   when: install_zsh
