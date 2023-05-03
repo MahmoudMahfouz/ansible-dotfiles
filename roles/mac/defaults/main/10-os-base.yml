@@ -159,8 +159,8 @@ osx_defaults:
 # - com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 - NSGlobalDomain ApplePressAndHoldEnabled -bool false
 - NSGlobalDomain com.apple.springing.enabled -bool true
-- NSGlobalDomain KeyRepeat -int 0
-- NSGlobalDomain InitialKeyRepeat -int 0
+- NSGlobalDomain KeyRepeat -float 0
+- NSGlobalDomain InitialKeyRepeat -float 0
 - NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 - NSGlobalDomain NSDisableAutomaticTermination -bool true
 - NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -int 1
