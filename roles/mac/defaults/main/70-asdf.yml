@@ -11,298 +11,242 @@ asdf_bin: "{{ asdf_dir}}/bin/asdf"
 asdf_shims: "{{ asdf_dir }}/shims"
 
 asdf_plugins:
-  # - name: stern
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/looztra/asdf-stern"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: tilt
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/eaceaser/asdf-tilt"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: opa
-  #   # Open policy agent
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/tochukwuvictor/asdf-opa"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: pluto
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/FairwindsOps/asdf-pluto"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: rclone
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/johnlayton/asdf-rclone"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: redis
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/smashedtoatoms/asdf-redis"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: starship
-  #   # All terminals and shells prompt
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/grimoh/asdf-starship"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: k9s
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/looztra/asdf-k9s"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: tmux
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/aphecetche/asdf-tmux"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: minikube
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/alvarobp/asdf-minikube.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: gcloud
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/jthegedus/asdf-gcloud.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: dive
-  #   # Tool for diving into container layers
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/looztra/asdf-dive"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: doctl
-  #   # Digitalocean
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/maristgeek/asdf-doctl.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # # - name: perl
-  # #   brew_deps: []
-  # #   prefix: ""
-  #   # repository: "https://github.com/ouest/asdf-perl.git"
-  # #   versions:
-  # #     - 5.6.0
-  # #   delete_versions: []
-  # #   global: 5.6.0
-  # - name: istioctl
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/virtualstaticvoid/asdf-istioctl.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: r
-  #   brew_deps: []
-  #   prefix: "R_CONFIGURE_OPTIONS=--with-x=no"
-  #   repository: "https://github.com/asdf-community/asdf-r.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: golang
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/kennyp/asdf-golang.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: python
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: ""
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: nodejs
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/asdf-vm/asdf-nodejs.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: ruby
-  #   brew_deps: ["ruby-build"]
-  #   prefix: ""
-  #   repository: "https://github.com/asdf-vm/asdf-ruby.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: java
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/halcyon/asdf-java.git"
-  #   versions:
-  #     - openjdk-20
-  #   delete_versions: []
-  #   global: openjdk-20
-  # - name: haskell
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/vic/asdf-haskell.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: erlang
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/asdf-vm/asdf-erlang.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: rust
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/code-lever/asdf-rust.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: helm
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/Antiarchitect/asdf-helm.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: jq
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/azmcode/asdf-jq"
-  #   versions:
-  #     - 1.6
-  #   delete_versions: []
-  #   global: 1.6
-  # - name: jsonnet
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/Banno/asdf-jsonnet.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: kubectl
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/Banno/asdf-kubectl.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: kubectx
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/trnubo/asdf-kubectx.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: kubefedctl
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/kvokka/asdf-kubefedctl.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: elasticsearch
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/asdf-community/asdf-elasticsearch.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: lua
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/Stratus3D/asdf-lua.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: skaffold
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/virtualstaticvoid/asdf-skaffold.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: terraform
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/Banno/asdf-hashicorp.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: terragrunt
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/lotia/asdf-terragrunt.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
-  # - name: vault
-  #   brew_deps: []
-  #   prefix: ""
-  #   repository: "https://github.com/Banno/asdf-hashicorp.git"
-  #   versions:
-  #     - latest
-  #   delete_versions: []
-  #   global: latest
+  - name: stern
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/looztra/asdf-stern"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: tilt
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/eaceaser/asdf-tilt"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: opa
+    # Open policy agent
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/tochukwuvictor/asdf-opa"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: pluto
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/FairwindsOps/asdf-pluto"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: rclone
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/johnlayton/asdf-rclone"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: starship
+    # All terminals and shells prompt
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/grimoh/asdf-starship"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: k9s
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/looztra/asdf-k9s"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: tmux
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/aphecetche/asdf-tmux"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: minikube
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/alvarobp/asdf-minikube.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: gcloud
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/jthegedus/asdf-gcloud.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: dive
+    # Tool for diving into container layers
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/looztra/asdf-dive"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: doctl
+    # Digitalocean
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/maristgeek/asdf-doctl.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: perl
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/ouest/asdf-perl.git"
+    versions:
+      - 5.6.0
+    delete_versions: []
+    global: 5.6.0
+  - name: r
+    brew_deps: []
+    prefix: "R_CONFIGURE_OPTIONS=--with-x=no"
+    repository: "https://github.com/asdf-community/asdf-r.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: golang
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/kennyp/asdf-golang.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: python
+    brew_deps: []
+    prefix: ""
+    repository: ""
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: nodejs
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/asdf-vm/asdf-nodejs.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: ruby
+    brew_deps: ["ruby-build"]
+    prefix: ""
+    repository: "https://github.com/asdf-vm/asdf-ruby.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: java
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/halcyon/asdf-java.git"
+    versions:
+      - openjdk-20
+    delete_versions: []
+    global: openjdk-20
+  - name: haskell
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/vic/asdf-haskell.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: erlang
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/asdf-vm/asdf-erlang.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: rust
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/code-lever/asdf-rust.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: helm
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/Antiarchitect/asdf-helm.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: jq
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/azmcode/asdf-jq"
+    versions:
+      - 1.6
+    delete_versions: []
+    global: 1.6
+  - name: jsonnet
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/Banno/asdf-jsonnet.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: kubectl
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/Banno/asdf-kubectl.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: kubectx
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/trnubo/asdf-kubectx.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: lua
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/Stratus3D/asdf-lua.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
+  - name: terraform
+    brew_deps: []
+    prefix: ""
+    repository: "https://github.com/Banno/asdf-hashicorp.git"
+    versions:
+      - latest
+    delete_versions: []
+    global: latest
   - name: yq
     brew_deps: []
     prefix: ""
@@ -311,42 +255,10 @@ asdf_plugins:
       - v4.30.8
     delete_versions: []
     global: v4.30.8
-  - name: consul
-    brew_deps: []
-    prefix: ""
-    repository: "https://github.com/Banno/asdf-hashicorp.git"
-    versions:
-      - latest
-    delete_versions: []
-    global: latest
-  - name: velero
-    brew_deps: []
-    prefix: ""
-    repository: "https://github.com/looztra/asdf-velero"
-    versions:
-      - latest
-    delete_versions: []
-    global: latest
-  - name: sops
-    brew_deps: []
-    prefix: ""
-    repository: "https://github.com/feniix/asdf-sops.git"
-    versions:
-      - latest
-    delete_versions: []
-    global: latest
   - name: kustomize
     brew_deps: []
     prefix: ""
     repository: "https://github.com/Banno/asdf-kustomize.git"
-    versions:
-      - latest
-    delete_versions: []
-    global: latest
-  - name: flux2
-    brew_deps: []
-    prefix: ""
-    repository: "https://github.com/tablexi/asdf-flux2.git"
     versions:
       - latest
     delete_versions: []
