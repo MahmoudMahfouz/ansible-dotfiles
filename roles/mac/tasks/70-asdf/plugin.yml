@@ -35,10 +35,13 @@
 - name: "Install ASDF versions for {{asdf_plugin.name}}"
   command: "bash -lc 'source {{asdf_dir}}/asdf.sh && {{asdf_plugin.prefix}} {{asdf_bin}} install {{ asdf_plugin.name }} {{ item }}'"
   with_items: "{{ asdf_plugin.versions }}"
+  ignore_errors: true
 
 - name: "Remove ASDF versions for {{asdf_plugin.name}}"
   command: "bash -lc 'source {{asdf_dir}}/asdf.sh && {{ asdf_bin}} uninstall {{ asdf_plugin.name }} {{ item }}'"
   with_items: "{{ asdf_plugin.delete_versions }}"
+  ignore_errors: true
 
 - name: "Set global ASDF version for {{asdf_plugin.name}}"
   command: "bash -lc 'source {{asdf_dir}}/asdf.sh && {{ asdf_bin}} global {{ asdf_plugin.name }} {{ asdf_plugin.versions | last }}'"
+  ignore_errors: true
