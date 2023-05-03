@@ -67,7 +67,12 @@
     state: present
   when: ansible_distribution == 'Ubuntu'
 
-- name: P10k config
+# - name: P10k config
+#   copy:
+#     src: .p10k.sh
+#     dest: "{{ ansible_env.HOME }}/.p10k.sh"
+
+- name: Starship config
   copy:
-    src: .p10k.sh
-    dest: "{{ ansible_env.HOME }}/.p10k.sh"
+    src: starship.toml
+    dest: "{{ config_dir }}/starship.toml"
