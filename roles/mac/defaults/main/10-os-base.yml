@@ -136,6 +136,8 @@ cask_packages:
 mas_packages:
 # Trello
 - 1278508951
+# Disk Speed Test
+- 425264550
 
 osx_defaults:
 - com.apple.appstore ShowDebugMenu -bool true
