@@ -138,6 +138,8 @@ mas_packages:
 - 1278508951
 # Disk Speed Test
 - 425264550
+# magnet (windows resizing)
+- 441258766
 
 osx_defaults:
 - com.apple.appstore ShowDebugMenu -bool true
